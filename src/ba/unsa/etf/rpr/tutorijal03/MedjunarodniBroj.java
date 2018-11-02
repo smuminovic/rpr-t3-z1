@@ -12,4 +12,16 @@ public class MedjunarodniBroj extends TelefonskiBroj {
     public void setBroj(String broj) {
         this.broj = broj;
     }
+    public String getBroj() {
+        return broj;
+    }
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+    @Override
+    public String ispisi() {
+        return drzava+"/"+getBroj();
+    }
+
 }
