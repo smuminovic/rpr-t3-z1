@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Imenik {
     TelefonskiBroj broj;
@@ -37,5 +39,17 @@ public class Imenik {
             }
         }
         return spisak;
+    }
+
+    Set<String> izGrada(FiksniBroj.Grad g) {
+        Set<String> spisak = new HashSet<String>();
+        for (String ime : this.contactMap.keySet()) {
+            TelefonskiBroj broj1 = this.contactMap.get(ime);
+            if (broj1 instanceof TelefonskiBroj) {
+                FiksniBroj br2 = (FiksniBroj) broj1;
+                if (br2.getGrad() == g) spisak.add(ime);
+            }
+        }
+        return  spisak;
     }
 }
