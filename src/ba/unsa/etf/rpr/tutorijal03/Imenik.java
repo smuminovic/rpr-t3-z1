@@ -11,7 +11,7 @@ public class Imenik {
         this.contactMap = new HashMap<String, TelefonskiBroj>();
     }
     void dodaj(String ime, TelefonskiBroj broj) {
-
+        this.contactMap.put(ime, broj);
     }
     String dajBroj(String ime) {
         TelefonskiBroj br=null;
@@ -24,5 +24,18 @@ public class Imenik {
     String dajIme(TelefonskiBroj broj) {
         String ime = "";
         return  this.contactMap.get(broj).toString();
+    }
+
+    String naSlovo(char s) {
+        String ss = "" + s;
+        String spisak = "";
+        int redni_br = 0;
+        for (String ime : contactMap.keySet()) {
+            if (ime.startsWith(ss)) {
+                redni_br++;
+                spisak += (redni_br + ". " + ime + " - " + dajBroj(ime) + "\n");
+            }
+        }
+        return spisak;
     }
 }
