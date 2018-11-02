@@ -1,22 +1,20 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-//FiksniBroj sadrži konstruktor FiksniBroj(Grad grad, String broj). Parametar
-//broj je dio telefonskog broja bez pozivnog broja npr. "123-456", a grad je
-//promjenljiva pobrojanog tipa koji označava pozivni broj koji treba koristiti npr.:
-//enum Grad { SARAJEVO, TUZLA, ZENICA…}
-//Spisak pozivnih brojeva se može naći ovdje. Umjesto imena kantona koristite ime
-//glavnog grada kantona (kao u primjeru iznad), a umjesto Brčko distrikta stavite
-//BRCKO. Metoda ispisi() treba vratiti broj oblika "033/123-456"
-
 public class FiksniBroj extends TelefonskiBroj implements Comparable{
-    String broj;
+    public String broj;
+    public Grad grad;
+
+    public FiksniBroj(Grad grad, String broj){
+        this.setGrad(grad);
+        this.setBroj(broj);
+    }
     enum Grad {
         TRAVNIK(30), ODZAK(31), SARAJEVO(33), BREZA(32), LIVNO(34), TUZLA(35), KONJIC(36), BIHAC(37), GORAZDE(38), LJUBUSKI(39);
         private final int id;
         Grad(int id) { this.id = id; }
         public  int getValue() { return id; }
     }
-    Grad grad;
+
 
     //getteri
     public String getBroj() {
@@ -26,16 +24,13 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable{
         return grad;
     }
     //setteri
-    public void setGrad() {
+    public void setGrad(Grad grad) {
         this.grad = grad;
     }
-    public void setBroj() {
+    public void setBroj(String broj) {
         this.broj = broj;
     }
 
-    public FiksniBroj(Grad grad, String broj) {
-
-    }
 
     //override
     @Override
@@ -50,7 +45,6 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable{
     }
     @Override
     public int compareTo(Object o) {
-        FiksniBroj broj=(FiksniBroj) o;
-        return  0;
+        return this.getBroj().compareTo(((FiksniBroj)o).getBroj());
     }
 }
