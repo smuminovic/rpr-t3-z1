@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Imenik {
     TelefonskiBroj broj;
@@ -15,7 +16,7 @@ public class Imenik {
     void dodaj(String ime, TelefonskiBroj broj) {
         this.contactMap.put(ime, broj);
     }
-    String dajBroj(String ime) {
+    public String dajBroj(String ime) {
         TelefonskiBroj br=null;
         if (contactMap.containsKey(ime)) {
             br = this.contactMap.get(ime);
@@ -23,7 +24,7 @@ public class Imenik {
         return br.ispisi();
     }
 
-    String dajIme(TelefonskiBroj broj) {
+    public String dajIme(TelefonskiBroj broj) {
         String ime = "";
         return  this.contactMap.get(broj).toString();
     }
@@ -34,14 +35,14 @@ public class Imenik {
         int redni_br = 0;
         for (String ime : contactMap.keySet()) {
             if (ime.startsWith(ss)) {
-                redni_br++;
+                redni_br+=1;
                 spisak += (redni_br + ". " + ime + " - " + dajBroj(ime) + "\n");
             }
         }
         return spisak;
     }
 
-    Set<String> izGrada(FiksniBroj.Grad g) {
+    public Set<String> izGrada(FiksniBroj.Grad g) {
         Set<String> spisak = new HashSet<String>();
         for (String ime : this.contactMap.keySet()) {
             TelefonskiBroj broj1 = this.contactMap.get(ime);
@@ -51,5 +52,16 @@ public class Imenik {
             }
         }
         return  spisak;
+    }
+
+    public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
+        Set<TelefonskiBroj> skup = new HashSet<TelefonskiBroj>();
+        for (String ime : this.contactMap.keySet()) {
+            TelefonskiBroj br1 = this.contactMap.get(ime);
+            if (br1 instanceof FiksniBroj) skup.add(br1);
+        }
+        TreeSet<TelefonskiBroj> ts = new TreeSet<TelefonskiBroj>();
+        ts.addAll(skup);
+        return ts;
     }
 }
