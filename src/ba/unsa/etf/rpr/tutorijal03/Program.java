@@ -86,7 +86,7 @@ public class Program {
         int i;
         vanjska: for (i = 0;;) {
             System.out.println("Odaberite jednu opciju:\n");
-            System.out.println("0: Izlaz iz programa 1: Dodaj kontakte u mapu 2: Daj broj kontakta 3: Daj ime kontakta\n ");
+            System.out.println("0: Izlaz iz programa 1: Dodaj kontakte u mapu 2: Daj broj kontakta\n ");
             System.out.println("4: Sve kontakte na unseno slovo 5: Skup kontakata iz grada 6: Skup osoba iz grada");
             int n = ulaz.nextInt();
             switch(n) {
@@ -97,8 +97,6 @@ public class Program {
                     break;
                 case 2:
                     DajKontakta();
-                    break;
-                case 3:
                     break;
                 case 4:
                     KontakteNaSlovo();
