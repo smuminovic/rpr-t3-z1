@@ -43,6 +43,13 @@ public class Program {
         else izlaz.println("Pogresan unos!");
     }
 
+    public static void DajKontakta(){
+        izlaz.println("Unesite ime kontakta kojeg zelite: ");
+        String ime=ulaz.nextLine();
+        String broj=imenik.dajBroj(ime);
+        izlaz.println(broj);
+    }
+
     public static void main(String[] args) {
         int i;
         vanjska: for (i = 0;;) {
@@ -55,6 +62,9 @@ public class Program {
                     break vanjska;
                 case 1:
                     DodajKontakta(izlaz, ulaz);
+                    break;
+                case 2:
+                    DajKontakta();
                     break;
             }
         }
