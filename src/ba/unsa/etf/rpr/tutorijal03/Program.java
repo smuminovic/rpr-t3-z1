@@ -10,7 +10,7 @@ public class Program {
     public static PrintStream izlaz= System.out;
     private static Imenik imenik=new Imenik();
 
-    public  static void DodajKontakta(PrintStream izlaz, Scanner ulaz){
+    public static void dodajKontakta(PrintStream izlaz, Scanner ulaz){
         izlaz.println("Unesite ime kontakta: " );
         String ime=ulaz.nextLine();
         izlaz.println("Pristisnite 1 za unos fiksnog broja, 2 za unos mobilnog ili 3 za medjunarodni broj");
@@ -45,14 +45,14 @@ public class Program {
         else izlaz.println("Pogresan unos!");
     }
 
-    public static void DajKontakta(){
+    public static void dajKontakta(){
         izlaz.println("Unesite ime kontakta kojeg zelite: ");
         String ime=ulaz.nextLine();
         String broj=imenik.dajBroj(ime);
         izlaz.println(broj);
     }
 
-    public static void KontakteNaSlovo(){
+    public static void kontakteNaSlovo(){
         izlaz.println("Unesite slovo: ");
         char slovo=ulaz.next().charAt(0);
         String naSlovo=imenik.naSlovo(slovo);
@@ -82,7 +82,7 @@ public class Program {
     }
 
     public static void main(String[] args) {
-        DodajKontakta(izlaz,ulaz);
+        dodajKontakta(izlaz,ulaz);
         int i;
         vanjska: for (i = 0;;) {
             System.out.println("Odaberite jednu opciju:\n");
@@ -93,13 +93,13 @@ public class Program {
                 case 0:
                     break vanjska;
                 case 1:
-                    DodajKontakta(izlaz, ulaz);
+                    dodajKontakta(izlaz, ulaz);
                     break;
                 case 2:
-                    DajKontakta();
+                    dajKontakta();
                     break;
                 case 4:
-                    KontakteNaSlovo();
+                    kontakteNaSlovo();
                     break;
                 case 5:
                     izGrada();
