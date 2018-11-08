@@ -70,6 +70,17 @@ public class Program {
         }
     }
 
+    public static void izGradaLjudi(){
+        Set<TelefonskiBroj>skup= new TreeSet<TelefonskiBroj>();
+        String imeGrada=ulaz.nextLine();
+        FiksniBroj.Grad grad = FiksniBroj.Grad.valueOf(ulaz.next().toUpperCase());
+        skup=imenik.izGradaBrojevi(grad);
+        String result = "";
+        for (TelefonskiBroj broj: skup) {
+            result += broj.ispisi() + ",";
+        }
+    }
+
     public static void main(String[] args) {
         DodajKontakta(izlaz,ulaz);
         int i;
