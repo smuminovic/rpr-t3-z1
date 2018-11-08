@@ -50,7 +50,15 @@ public class Program {
         izlaz.println(broj);
     }
 
+    public static void KontakteNaSlovo(){
+        izlaz.println("Unesite slovo: ");
+        char slovo=ulaz.next().charAt(0);
+        String naSlovo=imenik.naSlovo(slovo);
+        izlaz.print(naSlovo);
+    }
+
     public static void main(String[] args) {
+        DodajKontakta(izlaz,ulaz);
         int i;
         vanjska: for (i = 0;;) {
             System.out.println("Odaberite jednu opciju:\n");
@@ -65,6 +73,11 @@ public class Program {
                     break;
                 case 2:
                     DajKontakta();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    KontakteNaSlovo();
                     break;
             }
         }
