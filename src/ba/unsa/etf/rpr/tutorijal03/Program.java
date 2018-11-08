@@ -18,7 +18,7 @@ public class Program {
         ulaz.nextLine();
         FiksniBroj fikbr;
         MobilniBroj mobbr;
-        MedjunarodniBroj medbr;
+        MedunarodniBroj medbr;
         if(odabir==1) {
             izlaz.println("Unesite grad i broj: ");
             String grad= ulaz.nextLine();
@@ -39,7 +39,7 @@ public class Program {
             izlaz.println("Unesite drzavu i broj: ");
             String mreza=ulaz.nextLine();
             String broj=ulaz.nextLine();
-            medbr=new MedjunarodniBroj(mreza, broj);
+            medbr=new MedunarodniBroj(mreza, broj);
             imenik.dodaj(ime,medbr);
         }
         else izlaz.println("Pogresan unos!");
