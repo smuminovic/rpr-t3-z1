@@ -2,6 +2,8 @@ package ba.unsa.etf.rpr.tutorijal03;
 
 import java.io.PrintStream;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Program {
     public static Scanner ulaz = new Scanner(System.in);
@@ -57,6 +59,17 @@ public class Program {
         izlaz.print(naSlovo);
     }
 
+    public static void izGrada(){
+        Set<String> skup= new TreeSet<String>();
+        String imeGrada=ulaz.nextLine();
+        FiksniBroj.Grad grad = FiksniBroj.Grad.valueOf(ulaz.next().toUpperCase());
+        skup=imenik.izGrada(grad);
+        String result = "";
+        for (String ime: skup) {
+            result += ime + ",";
+        }
+    }
+
     public static void main(String[] args) {
         DodajKontakta(izlaz,ulaz);
         int i;
@@ -78,6 +91,12 @@ public class Program {
                     break;
                 case 4:
                     KontakteNaSlovo();
+                    break;
+                case 5:
+                    izGrada();
+                    break;
+                case 6:
+                    izGradaLjudi();
                     break;
             }
         }
