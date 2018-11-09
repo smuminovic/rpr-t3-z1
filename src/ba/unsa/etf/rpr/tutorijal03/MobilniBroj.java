@@ -5,16 +5,16 @@ public class MobilniBroj extends TelefonskiBroj {
     private int mobilnaMreza;
     private String broj;
     //konstruktor
-    public MobilniBroj(int mobilnaMreza, String broj) {
-        this.setMobilnaMreza(mobilnaMreza);
-        this.setBroj(broj);
+    public MobilniBroj(int mobilnaMreza1, String broj1) {
+        this.mobilnaMreza = mobilnaMreza1;
+        this.broj = broj1;
     }
 
-    public void setBroj(String broj) {
-        this.broj = broj;
+    public void setBroj(String broj1) {
+        this.broj = broj1;
     }
-    public void setMobilnaMreza(int mobilnaMreza) {
-        this.mobilnaMreza = mobilnaMreza;
+    public void setMobilnaMreza(int mobilnaMreza1) {
+        this.mobilnaMreza = mobilnaMreza1;
     }
 
     public int getMobilnaMreza() {

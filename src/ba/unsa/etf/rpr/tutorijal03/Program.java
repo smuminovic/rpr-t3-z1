@@ -29,10 +29,10 @@ public class Program {
         }
         else if(odabir==2){
             izlaz.println("Unesite mobilnu mrezu i broj: ");
-            int mob_mreza=ulaz.nextInt();
+            int mobMreza=ulaz.nextInt();
             ulaz.nextLine();
             String broj=ulaz.nextLine();
-            mobbr=new MobilniBroj(mob_mreza, broj);
+            mobbr=new MobilniBroj(mobMreza, broj);
             imenik.dodaj(ime, mobbr);
         }
         else if(odabir==3){
@@ -42,7 +42,7 @@ public class Program {
             medbr=new MedunarodniBroj(mreza, broj);
             imenik.dodaj(ime,medbr);
         }
-        else izlaz.println("Pogresan unos!");
+        else { izlaz.println("Pogresan unos!"); }
     }
 
     public static void dajKontakta(){
@@ -60,7 +60,7 @@ public class Program {
     }
 
     public static void izGrada(){
-        Set<String> skup= new TreeSet<String>();
+        Set<String> skup = new TreeSet<String>();
         String imeGrada=ulaz.nextLine();
         FiksniBroj.Grad grad = FiksniBroj.Grad.valueOf(ulaz.next().toUpperCase());
         skup=imenik.izGrada(grad);

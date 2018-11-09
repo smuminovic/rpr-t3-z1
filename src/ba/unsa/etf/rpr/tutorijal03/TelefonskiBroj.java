@@ -1,6 +1,5 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.HashMap;
 
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
 

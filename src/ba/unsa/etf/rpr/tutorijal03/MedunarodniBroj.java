@@ -6,13 +6,13 @@ public class MedunarodniBroj extends TelefonskiBroj {
     private String drzava;
     private String broj;
     //konstruktor
-    public MedunarodniBroj(String drzava, String broj) {
-        this.drzava = drzava;
-        this.setBroj(broj);
+    public MedunarodniBroj(String drzava1, String broj1) {
+        this.drzava = drzava1;
+        this.broj = broj1;
     }
 
-    public void setBroj(String broj) {
-        this.broj = broj;
+    public void setBroj(String broj1) {
+        this.broj = broj1;
     }
     public String getBroj() {
         return broj;
